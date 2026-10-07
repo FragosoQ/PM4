@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOMENGIL · PM1</title>
+<title>SOMENGIL · PM4</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -657,7 +657,7 @@ footer {
     <div class="h-center">
       <span class="h-badge">Montagem</span>
       <div class="h-sep"></div>
-      <span class="h-badge">Posto 1</span>
+      <span class="h-badge">Posto 4</span>
       <div class="h-sep"></div>
       <span class="h-op">OP_149_2026</span>
     </div>
@@ -777,7 +777,7 @@ const bc = v => v === 100 ? '#00ff87' : v > 0 ? '#00d4ff' : null;
 
 /* ── CONFIGURAÇÃO DE SHEET ── */
 const SHEET_POLL_INTERVAL = 20000;
-const SHEET_CONFIG = { id: '1GQUB52a2gKR429bjqJrNkbP5rjR7Z_4v85z9M7_Cr8Y', tab: 'PM1' };
+const SHEET_CONFIG = { id: '1GQUB52a2gKR429bjqJrNkbP5rjR7Z_4v85z9M7_Cr8Y', tab: 'PM4' };
 
 const FALLBACK_EV = 46;
 const evEl = document.getElementById('evNum');
@@ -903,7 +903,7 @@ function updateDeadline(startValue, dueValue) {
 }
 
 function updateStatus(rowData) {
-  const statusValue = getFieldValue(rowData, null, 'A', null);
+  const statusValue = getFieldValue(rowData, 'STATUS', 'AI', null);
   if (!statusEl) return;
   const statusText = statusValue && String(statusValue).trim().length > 0 ? 'Em Curso · ON' : 'standby';
   statusEl.textContent = statusText.toUpperCase();
@@ -917,7 +917,7 @@ function renderSheetData(sheetRow) {
 
   renderText(clientEl, getFieldValue(sheetRow, 'CLIENTE', 'K', CLIENT_FALLBACK), CLIENT_FALLBACK);
   renderText(modelEl, getFieldValue(sheetRow, 'MODELO', 'N', MODEL_FALLBACK), MODEL_FALLBACK);
-  renderLote(getFieldValue(sheetRow, 'LOTE', 'AK', LOTE_FALLBACK));
+  renderLote(getFieldValue(sheetRow, 'LOTE', 'O', LOTE_FALLBACK));
 
   const pais = getFieldValue(sheetRow, 'PAÍS', 'L', 'Portugal');
   const idioma = getFieldValue(sheetRow, 'IDIOMA', 'M', 'EN');
