@@ -952,8 +952,8 @@ function initializeSheetWatcher() {
 initializeSheetWatcher();
 
 // Carregar dados iniciais do sheet para atualizar o globo imediatamente
-loadSheetDataCached().then(cached => renderSheetData(cached)).catch(err => console.warn('Initial sheet load failed:', err));
-
+/*loadSheetDataCached().then(cached => renderSheetData(cached)).catch(err => console.warn('Initial sheet load failed:', err));*/
+loadSheetDataCached(SHEET_CONFIG).then(cached => renderSheetData(cached)).catch(err => console.warn('Initial sheet load failed:', err));
 /* ── DATE / TIME ── */
 function updateTime() {
   const now = new Date();
